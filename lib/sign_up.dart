@@ -4,6 +4,8 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/rendering.dart';
 import 'package:hire_me/common/kTextFieldLabel.dart';
 import 'package:hire_me/common/kTextfield.dart';
+import 'package:hire_me/constrants.dart';
+import 'package:hire_me/common/softui.dart';
 import 'package:hire_me/waveBG.dart';
 
 class SignUp extends StatefulWidget {
@@ -20,308 +22,78 @@ class _SignUpState extends State<SignUp> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: Colors.transparent,
-        resizeToAvoidBottomInset: true,
-        body: SingleChildScrollView(
-          child: Container(
-            height: MediaQuery.of(context).size.height,
-            child: Form(
-              key: _formKey,
-              child: Stack(
-                children: <Widget>[
-                  WaveBGPage(
-                    backgroundColor: Colors.blue[300],
-                    color1: Colors.white10,
-                    color2: Colors.white24,
-                    color3: Colors.white30,
-                    color4: Colors.white54,
+    return Form(
+      key: _formKey,
+      child: Scaffold(
+          backgroundColor: backgroundcolor,
+          body: SafeArea(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text(
+                    "Create an\n account.",
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                        fontSize: 40,
+                        fontWeight: FontWeight.w600,
+                        fontFamily: 'Raleway'),
                   ),
-                  ListView(
-                    shrinkWrap: true,
+                  SoftField(
+                    labeltext: "username",
+                  ),
+                  SoftField(
+                    labeltext: "email",
+                  ),
+                  SoftField(
+                    labeltext: "password",
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Padding(
-                              padding: const EdgeInsets.fromLTRB(20, 100, 0, 0),
-                              child: KTextFeildLabel(
-                                label: "Create an\nAccount",
-                                size: 40,
-                                color: Colors.black54,
-                              )),
-                          Padding(
-                              padding: const EdgeInsets.fromLTRB(20, 40, 0, 0),
-                              child: KTextFeildLabel(
-                                label: "Username",
-                                size: 25,
-                                color: Colors.white,
-                              )),
-                          Padding(
-                            padding: const EdgeInsets.fromLTRB(20, 15, 20, 0),
-                            child: KTextField(
-                              hint: "saitamaOPM",
-                            ),
-                          ),
-                          Padding(
-                              padding: const EdgeInsets.fromLTRB(20, 40, 0, 0),
-                              child: KTextFeildLabel(
-                                label: "Email",
-                                size: 25,
-                                color: Colors.white,
-                              )),
-                          Padding(
-                            padding: const EdgeInsets.fromLTRB(20, 15, 20, 0),
-                            child: KTextField(
-                              hint: "saitama@gmail.com",
-                            ),
-                          ),
-                          Padding(
-                              padding: const EdgeInsets.fromLTRB(20, 40, 0, 0),
-                              child: KTextFeildLabel(
-                                label: "Password",
-                                size: 25,
-                                color: Colors.white,
-                              )),
-                          Padding(
-                            padding: const EdgeInsets.fromLTRB(20, 15, 20, 0),
-                            child: KTextField(
-                              hint: "********",
-                              obscureText: true,
-                            ),
-                          ),
-                          Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 20.0),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                Padding(
-                                    padding:
-                                        const EdgeInsets.fromLTRB(0, 80, 0, 0),
-                                    child: KTextFeildLabel(
-                                      label: "Sign up as",
-                                      size: 30,
-                                      color: Colors.blue,
-                                    )),
-                                Row(
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsets.fromLTRB(
-                                          20, 80, 0, 0),
-                                      child: RaisedButton(
-                                        shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(18.0),
-                                            side: BorderSide(
-                                                color: Colors.transparent)),
-                                        onPressed: () {
-                                          Navigator.pushNamed(context, '/home');
-                                        },
-                                        color: Colors.blueAccent,
-                                        textColor: Colors.white,
-                                        child: Row(
-                                          children: [
-                                            Text("User".toUpperCase(),
-                                                style: TextStyle(fontSize: 14)),
-                                            Icon(EvaIcons.personOutline),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.fromLTRB(
-                                          20, 80, 0, 0),
-                                      child: RaisedButton(
-                                        shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(18.0),
-                                            side: BorderSide(
-                                                color: Colors.transparent)),
-                                        onPressed: () {
-                                          Navigator.pushNamed(
-                                              context, '/partnerDetailForm');
-                                        },
-                                        color: Colors.lightBlueAccent,
-                                        textColor: Colors.white,
-                                        child: Row(
-                                          children: [
-                                            Text("Partner ".toUpperCase(),
-                                                style: TextStyle(fontSize: 14)),
-                                            Icon(EvaIcons.peopleOutline),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                )
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.fromLTRB(0, 60, 0, 30),
-                            child: Center(
-                              child: InkWell(
-                                onTap: () {
-                                  Navigator.pushReplacementNamed(
-                                      context, '/signin');
-                                },
-                                child: AutoSizeText(
-                                  "Already have an account?\nSign In",
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.w400,
-                                      color: Colors.blue,
-                                      decoration: TextDecoration.underline),
-                                  maxFontSize: 20,
-                                  minFontSize: 15,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
+                      Text("Sign up",
+                          textAlign: TextAlign.left,
+                          style: TextStyle(
+                              fontSize: 25,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'Raleway')),
+                      SoftIcon(
+                        icon: GestureDetector(
+                            onTap: () {
+                              Navigator.pushReplacementNamed(context, '/home');
+                            },
+                            child: Icon(Icons.arrow_forward)),
+                        radius: 30,
                       ),
                     ],
                   ),
+                  Center(
+                      child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 80, 0, 20),
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.pushReplacementNamed(context, '/signin');
+                      },
+                      child: AutoSizeText(
+                        "Already have an account?\nSign in",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.blue,
+                            fontFamily: 'Raleway',
+                            decoration: TextDecoration.underline),
+                        maxFontSize: 20,
+                        minFontSize: 15,
+                      ),
+                    ),
+                  ))
                 ],
               ),
             ),
-          ),
-        ));
+          )),
+    );
   }
 }
-
-// Stack(
-//               children: [
-//                 WaveBGPage(
-//                   backgroundColor: Colors.blue[300],
-//                   color1: Colors.white10,
-//                   color2: Colors.white24,
-//                   color3: Colors.white30,
-//                   color4: Colors.white54,
-//                 ),
-//                 Column(
-//                   crossAxisAlignment: CrossAxisAlignment.start,
-//                   children: [
-//                     Padding(
-//                         padding: const EdgeInsets.fromLTRB(20, 100, 0, 0),
-//                         child: KTextFeildLabel(
-//                           label: "Create an\nAccount",
-//                           size: 40,
-//                           color: Colors.black54,
-//                         )),
-//                     Padding(
-//                         padding: const EdgeInsets.fromLTRB(20, 40, 0, 0),
-//                         child: KTextFeildLabel(
-//                           label: "Username",
-//                           size: 25,
-//                           color: Colors.white,
-//                         )),
-//                     Padding(
-//                       padding: const EdgeInsets.fromLTRB(20, 15, 20, 0),
-//                       child: KTextField(
-//                         hint: "saitamaOPM",
-//                       ),
-//                     ),
-//                     Padding(
-//                         padding: const EdgeInsets.fromLTRB(20, 40, 0, 0),
-//                         child: KTextFeildLabel(
-//                           label: "Email",
-//                           size: 25,
-//                           color: Colors.white,
-//                         )),
-//                     Padding(
-//                       padding: const EdgeInsets.fromLTRB(20, 15, 20, 0),
-//                       child: KTextField(
-//                         hint: "saitama@gmail.com",
-//                       ),
-//                     ),
-//                     Padding(
-//                         padding: const EdgeInsets.fromLTRB(20, 40, 0, 0),
-//                         child: KTextFeildLabel(
-//                           label: "Password",
-//                           size: 25,
-//                           color: Colors.white,
-//                         )),
-//                     Padding(
-//                       padding: const EdgeInsets.fromLTRB(20, 15, 20, 0),
-//                       child: KTextField(
-//                         hint: "********",
-//                         obscureText: true,
-//                       ),
-//                     ),
-//                     Padding(
-//                       padding: const EdgeInsets.symmetric(horizontal: 20.0),
-//                       child: Row(
-//                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//                         children: [
-//                           Padding(
-//                               padding: const EdgeInsets.fromLTRB(10, 80, 0, 0),
-//                               child: KTextFeildLabel(
-//                                 label: "Sign Up",
-//                                 size: 30,
-//                                 color: Colors.blue,
-//                               )),
-//                           Row(
-//                             children: [
-//                               Padding(
-//                                 padding:
-//                                     const EdgeInsets.fromLTRB(20, 80, 0, 0),
-//                                 child: RaisedButton(
-//                                   shape: RoundedRectangleBorder(
-//                                       borderRadius: BorderRadius.circular(18.0),
-//                                       side: BorderSide(
-//                                           color: Colors.transparent)),
-//                                   onPressed: () {},
-//                                   color: Colors.blueAccent,
-//                                   textColor: Colors.white,
-//                                   child: Text("User".toUpperCase(),
-//                                       style: TextStyle(fontSize: 14)),
-//                                 ),
-//                               ),
-//                               Padding(
-//                                 padding:
-//                                     const EdgeInsets.fromLTRB(20, 80, 0, 0),
-//                                 child: RaisedButton(
-//                                   shape: RoundedRectangleBorder(
-//                                       borderRadius: BorderRadius.circular(18.0),
-//                                       side: BorderSide(
-//                                           color: Colors.transparent)),
-//                                   onPressed: () {},
-//                                   color: Colors.lightBlueAccent,
-//                                   textColor: Colors.white,
-//                                   child: Text("Partner".toUpperCase(),
-//                                       style: TextStyle(fontSize: 14)),
-//                                 ),
-//                               ),
-//                             ],
-//                           )
-//                         ],
-//                       ),
-//                     ),
-//                     Padding(
-//                       padding: const EdgeInsets.fromLTRB(0, 60, 0, 0),
-//                       child: Center(
-//                         child: InkWell(
-//                           onTap: () {
-//                             Navigator.pushReplacementNamed(context, '/signin');
-//                           },
-//                           child: AutoSizeText(
-//                             "Already have an account?\nSign In",
-//                             textAlign: TextAlign.center,
-//                             style: TextStyle(
-//                                 fontSize: 20,
-//                                 fontWeight: FontWeight.w400,
-//                                 color: Colors.blue,
-//                                 decoration: TextDecoration.underline),
-//                             maxFontSize: 20,
-//                             minFontSize: 15,
-//                           ),
-//                         ),
-//                       ),
-//                     ),
-//                   ],
-//                 ),
-//               ],
-//             ),
