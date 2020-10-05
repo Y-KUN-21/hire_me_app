@@ -32,27 +32,29 @@ class SoftIcon extends StatelessWidget {
 
 class SoftField extends StatelessWidget {
   final String labeltext;
-
-  SoftField({Key key, @required this.labeltext}) : super(key: key);
+  final double height;
+  SoftField({Key key, this.height, @required this.labeltext}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 5.0),
+      padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20),
       child: Container(
-        width: 400,
-        height: 70,
+        width: double.infinity,
+        height: height ?? 70,
         child: TextFormField(
-          cursorColor: Colors.blue,
+          cursorColor: selectedLabelText,
           style: TextStyle(fontSize: 20),
           decoration: InputDecoration(
             labelText: labeltext,
+            fillColor: selectedLabelText,
+            floatingLabelBehavior: FloatingLabelBehavior.never,
             labelStyle: GoogleFonts.raleway(
-              textStyle: TextStyle(color: Colors.blue, letterSpacing: .5),
+              textStyle: TextStyle(color: selectedLabelText, letterSpacing: .5),
             ),
             border: InputBorder.none,
             contentPadding:
-                new EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                new EdgeInsets.symmetric(horizontal: 20, vertical: 25),
           ),
         ),
         decoration: BoxDecoration(
