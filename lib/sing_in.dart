@@ -20,44 +20,61 @@ class _SignInState extends State<SignIn> {
       child: Scaffold(
           backgroundColor: backgroundcolor,
           body: SafeArea(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            child: Center(
+              child: ListView(
+                shrinkWrap: true,
                 children: [
-                  Text(
-                    "Welcome\n back.",
-                    textAlign: TextAlign.left,
-                    style: TextStyle(
-                        fontSize: 40,
-                        fontWeight: FontWeight.w600,
-                        fontFamily: 'Raleway'),
+                  SizedBox(
+                    height: 40,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                    child: Text(
+                      "Welcome\n back.",
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                          fontSize: 40,
+                          fontWeight: FontWeight.w600,
+                          fontFamily: 'Raleway'),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 50,
                   ),
                   SoftField(
                     labeltext: "Email",
                   ),
+                  SizedBox(
+                    height: 40,
+                  ),
                   SoftField(
                     labeltext: "password",
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text("Sign in",
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                              fontSize: 25,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'Raleway')),
-                      SoftIcon(
-                        icon: GestureDetector(
-                            onTap: () {
-                              Navigator.pushReplacementNamed(context, '/home');
-                            },
-                            child: Icon(Icons.arrow_forward)),
-                        radius: 30,
-                      ),
-                    ],
+                  SizedBox(
+                    height: 50,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text("Sign in",
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'Raleway')),
+                        SoftIcon(
+                          icon: GestureDetector(
+                              onTap: () {
+                                Navigator.pushReplacementNamed(
+                                    context, '/bottomnavabar');
+                              },
+                              child: Icon(Icons.arrow_forward)),
+                          radius: 30,
+                        ),
+                      ],
+                    ),
                   ),
                   Center(
                       child: Padding(
@@ -72,14 +89,14 @@ class _SignInState extends State<SignIn> {
                         style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.w400,
-                            color: Colors.blue,
+                            color: selectedLabelText,
                             fontFamily: 'Raleway',
                             decoration: TextDecoration.underline),
                         maxFontSize: 20,
                         minFontSize: 15,
                       ),
                     ),
-                  ))
+                  )),
                 ],
               ),
             ),

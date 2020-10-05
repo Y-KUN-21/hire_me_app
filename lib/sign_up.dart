@@ -2,11 +2,8 @@ import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/rendering.dart';
-import 'package:hire_me/common/kTextFieldLabel.dart';
-import 'package:hire_me/common/kTextfield.dart';
 import 'package:hire_me/constrants.dart';
 import 'package:hire_me/common/softui.dart';
-import 'package:hire_me/waveBG.dart';
 
 class SignUp extends StatefulWidget {
   SignUp({Key key}) : super(key: key);
@@ -27,47 +24,67 @@ class _SignUpState extends State<SignUp> {
       child: Scaffold(
           backgroundColor: backgroundcolor,
           body: SafeArea(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            child: Center(
+              child: ListView(
+                shrinkWrap: true,
                 children: [
-                  Text(
-                    "Create an\n account.",
-                    textAlign: TextAlign.left,
-                    style: TextStyle(
-                        fontSize: 40,
-                        fontWeight: FontWeight.w600,
-                        fontFamily: 'Raleway'),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                    child: Text(
+                      "Create an\n account.",
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                          fontSize: 40,
+                          fontWeight: FontWeight.w600,
+                          fontFamily: 'Raleway'),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 50,
                   ),
                   SoftField(
                     labeltext: "username",
                   ),
+                  SizedBox(
+                    height: 30,
+                  ),
                   SoftField(
                     labeltext: "email",
+                  ),
+                  SizedBox(
+                    height: 30,
                   ),
                   SoftField(
                     labeltext: "password",
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text("Sign up",
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                              fontSize: 25,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'Raleway')),
-                      SoftIcon(
-                        icon: GestureDetector(
-                            onTap: () {
-                              Navigator.pushReplacementNamed(context, '/home');
-                            },
-                            child: Icon(Icons.arrow_forward)),
-                        radius: 30,
-                      ),
-                    ],
+                  SizedBox(
+                    height: 30,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text("Sign up",
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'Raleway')),
+                        SoftIcon(
+                          icon: IconButton(
+                              icon: Icon(EvaIcons.arrowForwardOutline),
+                              onPressed: () {
+                                Navigator.pushReplacementNamed(
+                                    context, '/home');
+                              }),
+                          radius: 30,
+                        ),
+                      ],
+                    ),
                   ),
                   Center(
                       child: Padding(
