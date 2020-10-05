@@ -5,5 +5,5 @@
 <p align=center>
   <img src="https://github.com/Y-KUN-21/hire_me_app/blob/master/screenshots/signin.jpg" width="250"  height="500">
   <img src="https://github.com/Y-KUN-21/hire_me_app/blob/master/screenshots/signup.jpg" width="250" height="500">
-  <img src="https://github.com/Y-KUN-21/hire_me_app/blob/master/screenshots/signuppartner.jpg" width="250" height="500">
+  <img src="https://github.com/Y-KUN-21/hire_me_app/blob/master/screenshots/profile.jpg" width="250" height="500">
 </p>
