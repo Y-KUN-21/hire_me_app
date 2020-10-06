@@ -79,7 +79,7 @@ class _SignUpState extends State<SignUp> {
                               icon: Icon(EvaIcons.arrowForwardOutline),
                               onPressed: () {
                                 Navigator.pushReplacementNamed(
-                                    context, '/home');
+                                    context, '/bottomnavbar');
                               }),
                           radius: 30,
                         ),
