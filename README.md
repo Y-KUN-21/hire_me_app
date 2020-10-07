@@ -6,4 +6,6 @@
   <img src="https://github.com/Y-KUN-21/hire_me_app/blob/master/screenshots/signin.png" width="250"  height="500">
   <img src="https://github.com/Y-KUN-21/hire_me_app/blob/master/screenshots/signup.png" width="250" height="500">
   <img src="https://github.com/Y-KUN-21/hire_me_app/blob/master/screenshots/profile.png" width="250" height="500">
+  <img src="https://github.com/Y-KUN-21/hire_me_app/blob/master/screenshots/home.png" width="250" height="500">
+  <img src="https://github.com/Y-KUN-21/hire_me_app/blob/master/screenshots/browse.png" width="250" height="500">
 </p>
